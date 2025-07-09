@@ -1,0 +1,4 @@
+PyMuPDF
+langchain
+langchain_groq
+dotenv

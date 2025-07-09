@@ -1,0 +1,496 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/357918057
+Development of Intelligent Telegram Chatbot Using Natural Language
+Processing
+Conference Paper · August 2021
+DOI: 10.1109/ICWT52862.2021.9678471
+CITATIONS
+13
+READS
+3,703
+4 authors, including:
+Teddy Surya Gunawan
+International Islamic University Malaysia
+346 PUBLICATIONS   4,106 CITATIONS   
+SEE PROFILE
+Asaad Babiker
+International Islamic University Malaysia
+7 PUBLICATIONS   119 CITATIONS   
+SEE PROFILE
+Nanang Ismail
+Sunan Gunung Djati State Islamic University Bandung
+92 PUBLICATIONS   835 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Teddy Surya Gunawan on 06 April 2022.
+The user has requested enhancement of the downloaded file.
+
+978-1-6654-4402-6/21/$31.00 ©2021 IEEE 
+Development of Intelligent Telegram Chatbot  
+Using Natural Language Processing 
+Teddy Surya Gunawan 
+Electrical and Computer Engineering Department  
+International Islamic University Malaysia 
+Kuala Lumpur, Malaysia 
+tsgunawan@iium.edu.my 
+Nanang Ismail 
+Department of Electrical Engineering 
+UIN Sunan Gunung Djati 
+Bandung, Indonesia 
+nanang.is@uinsgd.ac.id 
+Asaad Balla Falelmula Babiker 
+Electrical and Computer Engineering Department 
+International Islamic University Malaysia 
+Kuala Lumpur, Malaysia 
+asaadballah@gmail.com 
+Mufid Ridlo Effendi 
+Department of Electrical Engineering 
+UIN Sunan Gunung Djati 
+Bandung, Indonesia 
+mufid.ridlo@uinsgd.ac.id 
+Abstract—Intelligent chatbots have been gaining interest in 
+the past years due to the advance of artificial intelligence 
+algorithms. As a result, many studies have been conducted on 
+emotional transition and dialog structures. One of the benefits 
+is on the medical applications, in which psychological 
+assessment, clinical counseling, autism diagnostics, and 
+advanced cognitive models could be provided. On the other 
+hand, chatbot knowledge generally comes from a web-based 
+information repository, in which the information is reliable, but 
+it is rather not versatile as it does not contain emotions. The 
+objective of this paper is to develop an intelligent chatbot using 
+natural language processing and Telegram API. First, text 
+processing using Telegram API on Python was developed. Next, 
+emotion recognition was performed on the recorded chats. The 
+appropriate response is then sent to the user. Results showed 
+that our Telegram chatbot could interact smoothly with the 
+users and identify the user's emotions. 
+Keywords—Telegram 
+API, 
+chatbot, 
+natural 
+language 
+processing, emotion. 
+I. 
+INTRODUCTION 
+Starting from the first chatbot developed in 1966, Eliza 
+impersonated as a psychotherapist. Then, inspired by Eliza, 
+Alicebot was developed in 1995. SmarterChild was developed 
+in the previous decade and precursor of Siri and S Voice [1, 
+2]. Nowadays, chatbots have been popular as personal 
+assistants to users, such as Apple's Siri, Microsoft's Cortana, 
+Google Assistant, Amazon Alexa, and Samsung's Bixby [3]. 
+Chatbot knowledge generally comes from a web-based 
+information repository. The approach is reliable but not 
+versatile as normally it does not contain emotions. Chatbots 
+should provide responses based on user information and 
+demonstrate suitable feelings with the advancement of 
+artificial intelligence. The chatbot program stored words, 
+sounds, feelings, and actions from unimodal analysis to 
+multimodal integration to understand the user's psychological 
+features. The analysis of emotional transformation can be used 
+in communication to monitor the dialogue with the machine, 
+prevent unusual feelings and improve the reliability and 
+awareness of human-computer interaction [4]. 
+A chatbot is an artificially smart chat agent that simulates 
+a human-like interaction by allowing users to type questions, 
+i.e., queries, and produce meaningful answers to those 
+questions in return [5]. Chatbots have been used in many 
+applications, including education [6], mental health during the 
+Covid-19 pandemic [7], customer service [8], tourism [9], and 
+many others. 
+A chatbot can be one of two types, the first type of 
+architectural system is the retrieval model, a kind of rule-
+based interaction. The rule-based method is a predefined 
+prototype from which the chatbot chooses the response relying 
+on the input context. Such systems can not create new 
+responses to the message. Constructing chatbot awareness is a 
+time-consuming and challenging job besides the fact that it is 
+not scalable due to the human intervention required. Deep 
+learning techniques are used by the second type of chatbot 
+architecture, such as proposed in [10, 11]. In addition, deep 
+learning enables the system to interpret and convert a natural 
+human language into a medium that the system can understand 
+based on Natural Language Processing (NLP) [12].  
+This paper concentrated only on a text communicative 
+agent or chatbot which can interact with the user using various 
+natural language processing methods. A chatbot is designed in 
+many ways, starting with a basic rule-based approach until 
+more advanced through various machine learning techniques. 
+In addition, the chatbot needs to be humanized for better user 
+interaction. Various methods have been proposed to enhance 
+user engagement with a chatbot, such as creating a context-
+conscious chatbot or embedding personality. In addition, 
+emotion data helps improve the interaction between the 
+software and individual being, which help in a reduction of 
+misunderstandings [13]. Nevertheless, this paper aims to 
+develop a chatbot prototype that can recognize emotion from 
+text input and respond empathically. 
+II. 
+COMPARISON OF CHATBOT PLATFORMS 
+The chatbots for amusement, research or commercial 
+purposes can be built, as shown in Fig. 1. It can be categorized 
+into two categories depending on how it is developed. One is 
+bots based on commands, and the other is smart bots [14, 15]. 
+With the support of user inputs, retrieval bots are manually 
+coded by a programmer. It is a way to map specific questions 
+to their associative answers. However, to communicate with 
+clients, smart bots rely on machine learning. Instead of 
+running through the pre-determined answer, intelligent bots 
+anticipate response messages depending on context and past 
+messages, ensuring that the more we use the chatbot, the more 
+we get good responses. 
+
+The front end is the interface used by the chatbot to 
+communicate with clients. Common chatbots like Facebook 
+Messenger, Telegram, Skype, Slack, and many more offer 
+users a conversation interface for user-friendly interaction 
+with the bot. Some programming languages, such as Node.js, 
+provided a real-time conversation interface [14]. 
+ 
+Fig. 1. Chatbot Process with NLP 
+Chatbots are usually engineered on any cloud computing 
+system capable of supporting programming language that 
+allows the developers to create an interactive Application 
+Programming Interface (API), for example, Java, Ruby, Rust, 
+Node.js, Python, C++, Go, and PHP [16]. As stated in [15, 16], 
+the backend is responsible for collecting inputs, handling the 
+mistreatment of some existing APIs or algorithms, and 
+producing the response text. 
+TABLE I.  
+COMPARISON OF DIFFERENT CHATBOT PLATFORMS 
+Platform 
+Doc 
+Ease of Use 
+Pricing 
+Program 
+MS Bot 
+Framework 
+Good 
+Difficult 
+$0.50 per 
+1000 
+messages 
+.NET 
+JavaScript 
+Chatfuel 
+Good 
+Easy 
+Free 
+Python, PHP, 
+JavaScript 
+Amazon 
+Lex 
+Not 
+Good 
+Difficult 
+$0.00075 
+per 1000 
+messages 
+PHP, Python 
+Telegram 
+Bot 
+Good 
+Easy 
+Free 
+PHP, Python, 
+Java 
+ 
+Table I shows the comparison of different platforms to 
+create chatbots. In this research, the Telegram Bot API is used 
+as its documentation for the API is clear and simple but with 
+several useful features. It can also be used for many 
+applications, such as customized notifications and news, 
+accept Telegram user payments, and build social services. Due 
+to the current Covid-19 pandemic, mental health is our focus 
+for the chatbot. Several chatbots on mental health have been 
+developed, for example, in [7, 17]. Fig. 2 shows the basic 
+Telegram chatbot process flow. 
+ 
+Fig. 2. Typical Telegram Chatbot Process 
+III. 
+DESIGN AND IMPLEMENTATION 
+Human dialogues are an essential aspect of people's lives. 
+They contain valuable data, one of which is our concern in this 
+research: emotional recognition and the appropriate with 
+proper empathy. Safety mechanisms include diagnosing 
+anxiety, identifying disturbances, tracking public opinion, 
+assessing emotions, and recognizing emotional polarity [4]. 
+A. Chatbot General Framework 
+Chat-bots generally work by accepting user input which is 
+then sent to the chatbot API. Then the chatbot processes the 
+data by searching a predefined rule-based model or deep 
+learning techniques to provide an appropriate response. Fig. 3 
+illustrates the proposed emotional chatbot design and 
+implementation. 
+ 
+Fig. 3. Proposed Chatbot Design 
+The design of a chatbot consists of five stages. The first 
+stage was the preliminary investigation to determine the 
+essential criteria to boost a chatbot's naturality or believability 
+to engage users. Many factors appear to be the key to 
+improving chatbot or artificial person faithfulness. In user-
+chatbot interactions, emotion provides a vivid conversation.  
+The second parameter is personality. The purpose of 
+personality is to consider people's distinctive patterns of 
+thinking, attitudes, and behavior. Personality provides 
+somebody with a kind of identification as to how they feel and 
+the world. Studies have shown that a personality gives the 
+chatbot or the artificial human more complex responses, 
+increasing faithfulness. Social interaction is the last variable 
+that appeared to be the most important attribute for chatbots 
+that identifies the way people are closely and effectively 
+affected. 
+Social relations are also the main factor in our community, 
+and therefore the ability to comprehend and demonstrate 
+social relations increases the faithfulness of chatbots. 
+However, since the factors of social relations are not 
+straightforward to assess and control, this research focuses 
+only on the emotions and personality aspects of the chatbot. 
+The last stage is the evaluation of the chatbot system to 
+improve the designs. 
+B. Sentiment Analysis 
+Many emotional detection systems use lexicons or 
+sophisticated natural language processing algorithms. 
+Sentiment analysis is a statistical method used to analyze 
+beliefs, emotions, and subjectivity in texts. The aim is that 
+quality judgments of the document should be consistently 
+derived in a manner more coherent and reproducible than an 
+overall human decision. For example, in chatbot sentiment 
+analysis, we expected to get a positive number when we type 
+a positive statement like "This is amazing" or "I am happy." 
+On the other hand, writing "That's terrible" or "I am sad," 
+which is a negative statement, the system should yield a 
+negative number. Fig. 4 shows a sample of eight emotion 
+classifications from individual text input. 
+
+ 
+Fig. 4. Samples of eight emotion classification 
+Sentiment analysis is such a method of machine learning, 
+computer software in this area are designed to determine an 
+article set's emotional content and feelings [18]. It tends to 
+coordinate positive and negative feedback statistics while 
+increasing the necessity for human effort to identify the data. 
+The machine-learning method to the study of emotions is 
+essentially a controlled labeling system. For emotions that are 
+of concern, a list of contents is first coded manually. A 
+clustering algorithm is then generated to accurately classify 
+coding based on a textual element (words, punctuation, writer, 
+all inherent in the code). Then, the designed clustering 
+algorithm can be used for non-manually coded text. For 
+example, the natural language toolkit (NLTK) could be used 
+for sentiment analysis [15]. 
+C. Dataset 
+The NLPCC 2017 Shared Task Sample Data: Emotional 
+Conversation Generation was selected as the training dataset 
+in this paper. This database is created from Weibo posts and 
+contains responses and feedback. The training set 
+classification is used to describe the test set's emotions. Weibo 
+posts, however, can not be applied as the test sample, as it is a 
+post-response style rather than a structured dialogue. For the 
+training of our models, more than 1 million Weibo post-
+response pairs are utilized.  
+TABLE II.  
+SAMPLE OF LABELED EMOTIONS IN CONVERSATION 
+Conversations 
+Label 
+Q: It is cloudy tonight here!! 
+3 
+A: We are having a bright sun tonight! 
+1 
+Q: That nose is a real bright spot. 
+3 
+A: Today, Bobby pulled out a tennis ball. 
+1 
+Q: I hate it. I didn't sleep when I was at home. 
+4 
+A: Me too, hum. Sleepy. 
+3 
+Q: Fierce animals. 
+0 
+A: I think they are kind. 
+1 
+Q: Happy birthday oh, I love you. 
+1 
+A: Haha. Thank you. 
+1 
+The relationship between the tag and the category of 
+feelings can be seen in Table II. Approximately 1,110,000 
+pairs are branded with five types of emotions labeled as 0 to 4 
+for neutral, happy, disgust, sad, and angry, respectively. 
+D. Deep Learning Models 
+Recent neural networks store a lower-dimensional version 
+of the input string, which covers the entire text and even 
+preserves the entire word order with long-range semantics. 
+Recurring neural networks thus differ from conventional deep 
+learning, which can be adapted only to short text messages 
+because it used n-grams. There are three layers in this base 
+model: (a) an integrating layer that maps terms on low 
+dimension vectors in one-hot encoding; (b) a repetitive layer 
+that transmits data about words; and (c) a final sparse layer 
+which produces the actual prediction. 
+Weights are regularized by randomly removing a certain 
+portion of the neurons to improve the network's 
+generalization. In addition, it stops the neurons from being too 
+conditioned during exercises. The dropout layer is used inside 
+the recurrent layer; this ensures that connections between 
+repeating Long Short-Term Memory (LSTM) cells are 
+dropped randomly. Dropout is removed during the testing 
+stage (all neurons are used) to use the full predicting ability of 
+the variable studied. In addition, dropouts are introduced 
+between the repeating layer output and the prediction layer 
+data. 
+E. Implementation 
+Fig. 5 shows the design of chatbots, the user uses a 
+keyboard input, and the system captures a text. Then the 
+software uses a trained system of sentiment investigation to 
+extract thoughts and feelings from the text. The device collects 
+text and feelings and then sends them to the collection unit. 
+The deep learning algorithm then searches for the best 
+response as the output. The unit then transmits the best 
+response to the output program. In this investigation, the 
+emotional answers are used to generate a chat-sweat Empathy 
+with the user by a mirror or copy mechanism. 
+ 
+Fig. 5. Chatbot Implementation 
+For implementation, Python version 3.9.0 was used. In 
+addition, Python-telegram-bot version 13.7 was installed as a 
+Python wrapper for Telegram API. For natural conversational 
+chat, Google Dialogflow v2 was utilized, while Apiai was 
+used for NLP implementation. Other libraries installed 
+including sklearn, textblob, nltk, json, and random. 
+To register our Telegram bot, we must reach 
+@BotFather for registration using our Telegram client. The 
+/newbot command creates a new Telegram bot. It produces 
+the bot token, a chain of characters that is used to uniquely 
+identify and authenticate our new bot to connect to the 
+Telegram platform. The token can be retrieved by sending 
+/token command to @BotFather. Python-telegram-bot 
+uses the token to connect to the new Telegram bot using 
+telegram.ext package. 
+
+IV. 
+RESULTS AND DISCUSSION 
+A. Emotion Recognition and Emotional Response 
+Emotion-enabled chatbots consist of two basic parts: 
+emotion recognition and emotional responses. Fig. 6 shows 
+the 13 emotions which can be detected from user input. We 
+have used several classifiers for emotion recognition, such as 
+multinomial naïve Bayes classifier and linear support vector 
+machine (SVM). The recognition accuracy was 72.2% and 
+78.8%, respectively, when tested using NLPCC 2017 dataset. 
+ 
+Fig. 6. Thirteen possible emotions 
+After the recognition of the emotion, the chatbot should 
+reply with a meaningful emotional response. For that purpose, 
+the Google Dialogflow agent has been used to send a 
+meaningful reply message to the user. Dialogflow is a natural 
+language processing tool used to develop and incorporate a 
+communicative user interface into smartphone phones, web 
+applications, computers, bots, and integrated voice response 
+systems. 
+B. Personality and Response Evaluation 
+The developed chatbot can have smooth conversations 
+with users. It is a hybrid chatbot in which a deep learning 
+algorithm was used to extract emotion from text input, while 
+the retrieval method was used to generate appropriate 
+responses for common questions. Furthermore, the main 
+chatbot personality was designed to show empathy towards 
+the user's emotions. 
+ 
+Fig. 7. Sample dialog showing chatbot's personality 
+Some dialog sample is shown in Fig. 7, in which sense of 
+humor is noticeable. The developed chatbot can extract the 
+emotion from the text, i.e., the user was feeling sad. The 
+chatbot responded by suggesting a way to help the user. 
+Nevertheless, the chatbot is still in early development, in 
+which it might not be able to understand all questions nor 
+provide the most appropriate response. For the moment, the 
+chatbot is simply replying that it did not understand the 
+question, as shown in Fig. 8. 
+ 
+Fig. 8. Default response if the chatbot did not understand the question 
+V. CONCLUSIONS AND FUTURE WORKS 
+This paper has presented the prototype development of an 
+intelligent chatbot. First, Telegram was selected as the chatbot 
+platform due to its ease of use and simplicity. Next, Python 
+with various related packages was used for the prototype 
+implementation. Finally, emotion recognition was performed 
+on the text input. Then the appropriate response was then sent 
+to the user. Initial assessment showed that our developed 
+chatbot provided a natural conversation. Future works include 
+training with various deep learning models and datasets to 
+achieve higher recognition accuracy and more natural 
+responses with empathy. 
+ACKNOWLEDGMENT 
+The Malaysian Ministry of Education supported this work 
+under Fundamental Research Grant, FRGS19-076-0684 
+(FRGS/1/2018/ICT02/UIAM/02/4). In addition, the authors 
+would like to acknowledge support from International Islamic 
+University Malaysia and UIN Sunan Gunung Djati. 
+REFERENCES 
+[1] 
+R. Khan and A. Das, Build better chatbots: A complete guide to 
+getting started with chatbots. Apress, 2018. 
+[2] 
+H.-Y. Shum, X. He, and D. Li, "From Eliza to XiaoIce: challenges and 
+opportunities with social chatbots," arXiv preprint arXiv:1801.01957, 
+2018. 
+[3] 
+ C. Siebra et al., "Virtual assistants for mobile interaction: A review 
+from the accessibility perspective," in Proceedings of the 30th 
+Australian Conference on Computer-Human Interaction, 2018, pp. 
+568-571.  
+[4] 
+X. Sun, C. Zhang, and L. Li, "Dynamic emotion modelling and 
+anomaly detection in conversation based on emotional transition 
+tensor," Information Fusion, vol. 46, pp. 11-22, 2019. 
+[5] 
+ P. B. Brandtzaeg and A. Følstad, "Why people use chatbots," in 
+International conference on internet science, 2017: Springer, pp. 377-
+392.  
+[6] 
+P. Smutny and P. Schreiberova, "Chatbots for learning: A review of 
+educational chatbots for the Facebook Messenger," Computers & 
+Education, vol. 151, p. 103862, 2020. 
+[7] 
+A. S. Miner, L. Laranjo, and A. B. Kocaballi, "Chatbots in the fight 
+against the COVID-19 pandemic," NPJ digital medicine, vol. 3, no. 1, 
+pp. 1-4, 2020. 
+
+[8] 
+M. Adam, M. Wessel, and A. Benlian, "AI-based chatbots in customer 
+service and their effects on user compliance," Electronic Markets, vol. 
+9, no. 2, p. 204, 2020. 
+[9] 
+G. Sperlí, "A Cultural heritage framework using a Deep Learning 
+based Chatbot for supporting tourist journey," Expert Systems with 
+Applications, p. 115277, 2021. 
+[10] M. Dhyani and R. Kumar, "An intelligent Chatbot using deep learning 
+with Bidirectional RNN and attention model," Materials today: 
+proceedings, vol. 34, pp. 817-824, 2021. 
+[11] R. Csaky, "Deep learning based chatbot models," arXiv preprint 
+arXiv:1908.08835, 2019. 
+[12]  S. A. Fahad and A. E. Yahya, "Inflectional review of deep learning 
+on natural language processing," in 2018 international conference on 
+smart computing and electronic enterprise (ICSCEE), 2018: IEEE, pp. 
+1-4.  
+[13] E. W. Pamungkas, "Emotionally-aware chatbots: A survey," arXiv 
+preprint arXiv:1906.09774, 2019. 
+[14] A. Patil, K. Marimuthu, and R. Niranchana, "Comparative study of 
+cloud platforms to develop a Chatbot," International Journal of 
+Engineering & Technology, vol. 6, no. 3, pp. 57-61, 2017. 
+[15] S. Raj, Building Chatbots with Python: Using natural language 
+processing and machine learning. Apress, 2019. 
+[16] N. Modrzyk, Building Telegram Bots: Develop Bots in 12 
+Programming Languages using the Telegram Bot API. Apress, 2019. 
+[17] A. N. Vaidyam, H. Wisniewski, J. D. Halamka, M. S. Kashavan, and 
+J. B. Torous, "Chatbots and conversational agents in mental health: a 
+review of the psychiatric landscape," The Canadian Journal of 
+Psychiatry, vol. 64, no. 7, pp. 456-464, 2019. 
+[18]  A. Fadhil and S. Gabrielli, "Addressing challenges in promoting 
+healthy lifestyles: the al-chatbot approach," in Proceedings of the 11th 
+EAI international conference on pervasive computing technologies for 
+healthcare, 2017, pp. 261-265.  
+ 
+ 
+View publication stats
+
