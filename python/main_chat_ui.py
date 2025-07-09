@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
 import threading
-import fitz  # PyMuPDF
+import fitz
 import pytesseract
 from PIL import Image
 import io
